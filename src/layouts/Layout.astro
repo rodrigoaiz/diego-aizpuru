@@ -1,0 +1,43 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+import Header from "../components/Header.astro";
+import "@fontsource-variable/onest"
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content='Diego Aizpuru, a luminary in the realm of contemporary visual art, seamlessly fuses decades of experience with a youthful avant-garde spirit. His bold palette and dynamic brushstrokes bear testament to a deep engagement with the history of contemporary art, showcasing technical mastery across various styles from abstract expressionism to geometric abstraction. Aizpuru&apos;s canvases, pulsating with energy and vitality, defy conventions and explore novel aesthetic horizons, embodying a visionary approach that transcends traditional boundaries. Despite his extensive artistic journey, Aizpuru&apos;s work remains infused with a sense of uninhibited creativity, as he fearlessly ventures into uncharted territories, seamlessly incorporating contemporary and technological elements. A maestro who not only follows the current of contemporary art but reshapes it with each stroke, Diego Aizpuru epitomizes the harmony between accumulated experience and youthful vigor, crafting a timeless legacy that beckons viewers to perceive art with fresh eyes and open minds.' />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Header/>
+    <slot />
+  </body>
+</html>
+<style is:global>
+  :root {
+    color-scheme: dark;
+  }
+  html {
+    font-family:'Onest Variable', system-ui, sans-serif;
+    background: #13151a;
+  }
+  p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1em;
+    line-height: 1.4rem;
+    font-weight: 100;
+  }
+  p strong {
+    font-weight: 700;
+  }
+</style>
